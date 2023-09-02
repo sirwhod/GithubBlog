@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { BuildingSolid } from '../assets/icons/BuildingSolid'
 import { GithubLogo } from '../assets/icons/GithubLogo'
 import { UserGroup } from '../assets/icons/UserGroup'
@@ -15,7 +16,7 @@ import { Link } from '../components/basics/Link'
 export function Home() {
   return (
     <div>
-      <Card className="flex flex-row bg-base-profile shadow-xl">
+      <Card className="flex flex-col mx-4 items-center justify-center lg:mx-0 sm:flex-row bg-base-profile shadow-xl">
         <img
           className="w-[148px] h-[148px] rounded-lg"
           src="https://github.com/sirwhod.png"
@@ -55,7 +56,7 @@ export function Home() {
         </div>
       </Card>
 
-      <div className="flex flex-col items-center justify-center gap-3 mt-10">
+      <div className="px-4 lg:px-0 flex flex-col items-center justify-center gap-3 mt-10">
         <div className="w-full flex flex-row items-center justify-between">
           <strong className="font-nunito text-lg font-bold text-base-subtitle">
             Publicações
@@ -65,160 +66,38 @@ export function Home() {
         <Input placeholder="Buscar conteúdo" />
       </div>
 
-      <div className="w-full grid grid-cols-2 gap-8 mt-12 pb-10">
+      <div className="px-4 lg:px-0 w-full grid sm:grid-cols-2 gap-8 mt-12 pb-10">
         <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
+          <NavLink to="/">
+            <CardHeader>
+              <CardTitle>Rodrigo Brandão</CardTitle>
+              <CardTime>há 1 dia</CardTime>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Programming languages all have built-in data structures, but
+                these often differ from one language to another. This article
+                attempts to list the built-in data structures available in
+                JavaScript and what properties they have.
+              </p>
+            </CardContent>
+          </NavLink>
         </Card>
         <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <CardTime>há 1 dia</CardTime>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
-            </p>
-          </CardContent>
+          <NavLink to="/">
+            <CardHeader>
+              <CardTitle>Rodrigo Brandão</CardTitle>
+              <CardTime>há 1 dia</CardTime>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Programming languages all have built-in data structures, but
+                these often differ from one language to another. This article
+                attempts to list the built-in data structures available in
+                JavaScript and what properties they have.
+              </p>
+            </CardContent>
+          </NavLink>
         </Card>
       </div>
     </div>
