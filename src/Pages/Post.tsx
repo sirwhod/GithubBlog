@@ -27,7 +27,7 @@ export function Post() {
             </Link>
           </CardHeader>
           <CardContent>
-            <CardTitle className="font-nunito text-2xl text-base-title">Rodrigo Brandão</CardTitle>
+            <CardTitle className="mt-5 font-nunito text-2xl text-base-title">Rodrigo Brandão</CardTitle>
           </CardContent>
           <CardFooter className="p-0 mt-6 gap-6">
             <div className="flex flex-row items-center gap-2 text-base-span">

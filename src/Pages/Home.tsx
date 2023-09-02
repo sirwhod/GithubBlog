@@ -68,7 +68,7 @@ export function Home() {
 
       <div className="px-4 lg:px-0 w-full grid sm:grid-cols-2 gap-8 mt-12 pb-10">
         <Card>
-          <NavLink to="/">
+          <NavLink to="/post/teste">
             <CardHeader>
               <CardTitle>Rodrigo Brandão</CardTitle>
               <CardTime>há 1 dia</CardTime>
