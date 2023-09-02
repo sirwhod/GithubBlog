@@ -16,7 +16,7 @@ import { Link } from '../components/basics/Link'
 export function Home() {
   return (
     <div>
-      <Card className="flex flex-col mx-4 items-center justify-center lg:mx-0 sm:flex-row bg-base-profile shadow-xl">
+      <Card className="flex flex-col mx-1 items-center justify-center lg:mx-0 sm:flex-row bg-base-profile shadow-xl">
         <img
           className="w-[148px] h-[148px] rounded-lg"
           src="https://github.com/sirwhod.png"
@@ -38,17 +38,17 @@ export function Home() {
           <CardFooter className="p-0 mt-6 gap-6">
             <div className="flex flex-row items-center gap-2">
               <GithubLogo size={18} color="#3A536B" />
-              <span className="font-nunito font-normal text-base">sirwhod</span>
+              <span className="font-nunito font-normal text-[13px] sm:text-base">sirwhod</span>
             </div>
             <div className="flex flex-row items-center gap-2">
               <BuildingSolid size={18} color="#3A536B" />
-              <span className="font-nunito font-normal text-base">
+              <span className="font-nunito font-normal text-[13px] sm:text-base">
                 Lola Cosmetics
               </span>
             </div>
             <div className="flex flex-row items-center gap-2">
               <UserGroup size={18} color="#3A536B" />
-              <span className="font-nunito font-normal text-base">
+              <span className="font-nunito font-normal text-[13px] sm:text-base">
                 100 seguidores
               </span>
             </div>
@@ -56,7 +56,7 @@ export function Home() {
         </div>
       </Card>
 
-      <div className="px-4 lg:px-0 flex flex-col items-center justify-center gap-3 mt-10">
+      <div className="px-2 lg:px-0 flex flex-col items-center justify-center gap-3 mt-10">
         <div className="w-full flex flex-row items-center justify-between">
           <strong className="font-nunito text-lg font-bold text-base-subtitle">
             Publicações
@@ -66,7 +66,7 @@ export function Home() {
         <Input placeholder="Buscar conteúdo" />
       </div>
 
-      <div className="px-4 lg:px-0 w-full grid sm:grid-cols-2 gap-8 mt-12 pb-10">
+      <div className="px-2 lg:px-0 w-full grid sm:grid-cols-2 gap-8 mt-12 pb-10">
         <Card>
           <NavLink to="/post/teste">
             <CardHeader>
