@@ -12,44 +12,43 @@ import {
 } from '../components/basics/Card'
 import { Input } from '../components/basics/Input'
 import { Link } from '../components/basics/Link'
+import { useIssues } from '../context/issues/useIssues'
 
 export function Home() {
+  const { user } = useIssues()
   return (
     <div>
       <Card className="flex flex-col mx-1 items-center justify-center lg:mx-0 sm:flex-row bg-base-profile shadow-xl">
         <img
-          className="w-[148px] h-[148px] rounded-lg"
-          src="https://github.com/sirwhod.png"
+          className="w-[148px] h-[148px] rounded-full"
+          src={user?.avatarUrl}
           alt=""
         />
         <div className="h-full flex flex-col">
           <CardHeader>
-            <CardTitle>Rodrigo Brandão</CardTitle>
-            <Link to="/github">GITHUB</Link>
+            <CardTitle>{user?.name}</CardTitle>
+            <Link to={user ? user.htmlUrl : ''}>GITHUB</Link>
           </CardHeader>
           <CardContent>
             <p>
-              Programming languages all have built-in data structures, but these
-              often differ from one language to another. This article attempts
-              to list the built-in data structures available in JavaScript and
-              what properties they have.
+              {user?.bio}
             </p>
           </CardContent>
           <CardFooter className="p-0 mt-6 gap-6">
             <div className="flex flex-row items-center gap-2">
               <GithubLogo size={18} color="#3A536B" />
-              <span className="font-nunito font-normal text-[13px] sm:text-base">sirwhod</span>
+              <span className="font-nunito font-normal text-[13px] sm:text-base">{user?.login}</span>
             </div>
             <div className="flex flex-row items-center gap-2">
               <BuildingSolid size={18} color="#3A536B" />
               <span className="font-nunito font-normal text-[13px] sm:text-base">
-                Lola Cosmetics
+                {user?.company}
               </span>
             </div>
             <div className="flex flex-row items-center gap-2">
               <UserGroup size={18} color="#3A536B" />
               <span className="font-nunito font-normal text-[13px] sm:text-base">
-                100 seguidores
+                {user?.followers} seguidores
               </span>
             </div>
           </CardFooter>
