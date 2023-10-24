@@ -14,8 +14,14 @@ import { Input } from '../components/basics/Input'
 import { Link } from '../components/basics/Link'
 import { useIssues } from '../context/issues/useIssues'
 
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
 export function Home() {
-  const { user } = useIssues()
+  const { user, issues } = useIssues()
   return (
     <div>
       <Card className="flex flex-col mx-1 items-center justify-center lg:mx-0 sm:flex-row bg-base-profile shadow-xl">
@@ -66,38 +72,35 @@ export function Home() {
       </div>
 
       <div className="px-2 lg:px-0 w-full grid sm:grid-cols-2 gap-8 mt-12 pb-10">
-        <Card>
-          <NavLink to="/post/teste">
-            <CardHeader>
-              <CardTitle>Rodrigo Brandão</CardTitle>
-              <CardTime>há 1 dia</CardTime>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Programming languages all have built-in data structures, but
-                these often differ from one language to another. This article
-                attempts to list the built-in data structures available in
-                JavaScript and what properties they have.
-              </p>
-            </CardContent>
-          </NavLink>
-        </Card>
-        <Card>
-          <NavLink to="/">
-            <CardHeader>
-              <CardTitle>Rodrigo Brandão</CardTitle>
-              <CardTime>há 1 dia</CardTime>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Programming languages all have built-in data structures, but
-                these often differ from one language to another. This article
-                attempts to list the built-in data structures available in
-                JavaScript and what properties they have.
-              </p>
-            </CardContent>
-          </NavLink>
-        </Card>
+        {
+          issues?.map((issue) => {
+            return (
+              <Card key={issue.id}>
+                <NavLink to={`/post/${issue.id}`}>
+                  <CardHeader>
+                    <CardTitle>{issue.title}</CardTitle>
+                    <CardTime>
+                      {formatDistanceToNow(new Date(issue.created_at), {
+                        addSuffix: true,
+                        locale: ptBR,
+                      })}
+                    </CardTime>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="max-h-36 overflow-hidden">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        className="w-full font-nunito text-base text-base-text"
+                      >
+                        {issue.body}
+                      </ReactMarkdown>
+                    </p>
+                  </CardContent>
+                </NavLink>
+              </Card>
+            )
+          })
+        }
       </div>
     </div>
   )
