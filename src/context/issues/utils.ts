@@ -53,3 +53,34 @@ export async function getIssues() {
     console.log(err)
   }
 }
+
+export async function searchIssues(search: string) {
+  try {
+    const response = await api.get(`/search/issues?q=${search}%20repo:sirwhod/GithubBlog`)
+
+    console.log(response)
+    
+    if (response.data) {
+      const issueList = response.data.items.map((issue: IssueProps) => {
+        const issueData = {
+          id: issue.id,
+          title: issue.title,
+          body: issue.body,
+          html_url: issue.html_url,
+          created_at: issue.created_at,
+          comments: issue.comments,
+          user: {
+            login: issue.user.login
+          }
+        }
+
+        return issueData
+      })
+
+      return issueList
+    }
+
+  } catch (err) {
+    console.log(err)
+  }
+}

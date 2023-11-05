@@ -21,7 +21,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 export function Home() {
-  const { user, issues } = useIssues()
+  const { user, issues, handleSearchIssues } = useIssues()
   return (
     <div>
       <Card className="flex flex-col mx-1 items-center justify-center lg:mx-0 sm:flex-row bg-base-profile shadow-xl">
@@ -68,7 +68,7 @@ export function Home() {
           </strong>
           <p className="font-nunito text-sm text-base-span">6 publicações</p>
         </div>
-        <Input placeholder="Buscar conteúdo" />
+        <Input placeholder="Buscar conteúdo" onChange={(event) => {handleSearchIssues(event.target.value)}}/>
       </div>
 
       <div className="px-2 lg:px-0 w-full grid sm:grid-cols-2 gap-8 mt-12 pb-10">

@@ -1,3 +1,4 @@
+import { promises } from 'dns'
 import { ReactNode } from 'react'
 
 export interface UserProps {
@@ -32,6 +33,7 @@ export interface IssuesProps {
 export interface ContextIssues {
   user: UserProps | undefined
   issues: IssueProps[] | undefined
+  handleSearchIssues: (search: string) => Promise<void>
 }
 
 export interface IssuesProviderProps {

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { ContextIssues, IssueProps, IssuesProviderProps, UserProps } from './types'
-import { getDataUser, getIssues } from './utils'
+import { getDataUser, getIssues, searchIssues } from './utils'
 
 export const IssuesContext = createContext<ContextIssues>({} as ContextIssues)
 
@@ -20,18 +20,23 @@ export function IssuesProvider({children}: IssuesProviderProps) {
     setIssues(issuesList)
   }
 
+  async function handleSearchIssues(search: string) {
+    const issuesList = await searchIssues(search)
+    
+    setIssues(issuesList)
+  }
+
   useEffect(() => {
     handleGetDataUser()
     handleGetIssues()
-
-    console.log(user)
   }, [])
 
   return (
     <IssuesContext.Provider
       value={{
         user,
-        issues
+        issues,
+        handleSearchIssues
       }}
     >
       {children}
